@@ -1,7 +1,7 @@
 #!/bin/bash
 INSTALL="/home/testuser/workspace"
 unzipPath="/home/testuser/workspace/tmp/"
-[ -z "$1" ] || { echo "configSoft parameter error";exit -1; }
+[ -n "$1" ] || { echo "configSoft parameter error";exit -1; }
 unzipFile.sh $1
 cd $unzipPath
 mv * ../
