@@ -3,6 +3,7 @@ INSTALL="/home/testuser/workspace"
 unzipPath="/home/testuser/workspace/tmp/"
 [ -n "$1" ] || { echo "configSoft parameter error";exit -1; }
 unzipFile.sh $1
+result=`echo $?`;[ $result = "0" ] || exit $result
 cd $unzipPath
 mv * ../
 rm -fr $unzipPath
@@ -15,4 +16,3 @@ for shell in `ls -1 git/$1/config/special/`
 	{ 
 		bash $shell
 	}
-
