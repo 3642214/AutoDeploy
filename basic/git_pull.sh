@@ -1,7 +1,6 @@
 #!/bin/bash
 [ -n "$1" ] || { echo "git_pull parameter error:no parameter";exit -1; }
-softName=`bash nameToPath.sh $1`
-result=`echo $?`;[ $result = "0" ] || exit $result
+softName=`bash nameToPath.sh $1` || exit $?
 if [ -d /root/final/$1/.git ]
 	then
 		cd /root/final/$1

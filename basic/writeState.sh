@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/bin/bash
 stateFileName=/home/testuser/State
 [ -n "$1" ] || { echo "writeState parameter error:no parameter";exit -1; }

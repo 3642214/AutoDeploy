@@ -14,4 +14,3 @@ for shell in `ls -1 git/$1/config/special/`
 	{ 
 		bash $shell || exit $?
 	}
-
