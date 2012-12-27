@@ -1,5 +1,5 @@
 #!/bin/bash
-INSTALL_PATH=$userHome/workspace
+INSTALL_PATH=/home/testuser/workspace
 softName=`nameToPath.sh $1`
 [ -d $INSTALL_PATH/$softName/etc ] || { echo "not found file";exit -1; }
 		rm -fr $INSTALL_PATH/$softName/etc/*
@@ -8,5 +8,5 @@ softName=`nameToPath.sh $1`
 		#special config
 		for shell in `ls -1 git/$1/config/special/`
 		{ 
-			bash $shell
+		  bash $shell || exit $?
 		}
