@@ -1,6 +1,7 @@
 #!/bin/bash
 INSTALL_PATH=/home/testuser/workspace
-softName=`nameToPath.sh $1`
+[ -n "$1" ] || { echo "update_config parameter error:no parameter";exit -1; }
+softName=`bash nameToPath.sh $1` || exit $?
 [ -d $INSTALL_PATH/$softName/etc ] || { echo "not found file";exit -1; }
 		rm -fr $INSTALL_PATH/$softName/etc/*
 		#copy default config file
