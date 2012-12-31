@@ -1,5 +1,7 @@
 #!/bin/bash
 . conf_path
+softName=`ls -t -1 /home/testuser/workspace/|grep skyF`
+tmpPath=$userPath"/tmp/log/"$softName"_"$localIP
 rm -fr /home/testuser/tmp
 /bin/mkdir -p $tmpPath
 /bin/cp -r $logPath/*.log* $tmpPath/
