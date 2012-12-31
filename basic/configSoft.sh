@@ -5,7 +5,7 @@ bash unzipFile.sh $1 || exit $?
 cd $unzipPath
 mv * ../
 rm -fr $unzipPath
-softName=`nameToPath.sh $1` || exit $?
+softName=`bash nameToPath.sh $1` || exit $?
 #copy default config file
 rm -fr $installPath/$softName/etc/*
 cp -r git/$1/config/default/* $installPath/$softName/etc/
