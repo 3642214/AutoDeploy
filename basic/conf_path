@@ -1,5 +1,5 @@
 userPath="/home/testuser"
-jobTable=$userPath"/git"
+jobTable="/root/git/shell/KV"
 stateFileName=$userPath"/State"
 installPath=$userPath"/workspace"
 unzipPath=$installPath"/tmp/"
