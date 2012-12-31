@@ -1,5 +1,6 @@
 #!/bin/bash
 . conf_path
+PATH=$PATH:/root/shell/basic
 [ $# = 1 ] || { "run parameter error";exit -1; } 
 		softName=`bash nameToPath.sh $1` || exit $?
 		cd $softPath
