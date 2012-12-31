@@ -1,7 +1,7 @@
 #!/bin/bash
 . conf_path
 [ -d $unzipPath ] || mkdir -p $unzipPath
-unzipFile.sh $1 || exit $?
+bash unzipFile.sh $1 || exit $?
 cd $unzipPath
 mv * ../
 rm -fr $unzipPath
