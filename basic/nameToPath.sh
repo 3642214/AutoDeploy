@@ -5,5 +5,7 @@
 			CN|cn)echo skyFs-controller;;
 			SN|sn)echo skyFs-storage;;
 			CLT|clt)echo skyFS-mapreduce;;
+			KV)echo KV;;
+			shell)echo shell;;
 			*)echo "run parameter error";exit -1;;
 		esac		
