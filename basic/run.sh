@@ -9,5 +9,5 @@
 			else
 				screen -S $softName -dm ./$installPath/bin/$softName console
 				[ $? = "0" ] || { echo "run $softName error";exit -1; }
-				 	writeState.sh $softName || exit $?
+				 	bash writeState.sh $softName || exit $?
 		fi
