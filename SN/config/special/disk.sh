@@ -1,6 +1,6 @@
 #!/bin/bash
 appFile=/home/testuser/workspace/skyFs-storage/etc/app.config
-[ -f $appFile ] || echo "$appFile can not Found";exit -1
+[ -f $appFile ] || { echo "$appFile can not Found";exit -1; }
 	devCount=`df |wc -l`
 	devSize=
 	devPath=
