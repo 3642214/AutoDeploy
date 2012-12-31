@@ -9,9 +9,9 @@ mv -f * ../
 rm -fr $unzipPath
 #copy default config file
 rm -fr $installPath/$softName/etc/*
-cp -r /root/git/$1/config/default/* $installPath/$softName/etc/
+cp -r /root/git/shell/$1/config/default/* $installPath/$softName/etc/
 #special config
-for shell in `ls -1 git/$1/config/special/`
+for shell in `ls -1 /root/git/shell/$1/config/special/`
 	{ 
 		bash $shell || exit $?
 	}
