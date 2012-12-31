@@ -6,6 +6,7 @@ bash unzipFile.sh $1 || exit $?
 cd $unzipPath
 rm -fr ../$softName
 mv -f * ../
+cd ../
 rm -fr $unzipPath
 #copy default config file
 rm -fr $installPath/$softName/etc/*
