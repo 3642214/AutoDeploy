@@ -1,5 +1,4 @@
 #!/bin/bash
-stateFileName=/home/testuser/State
 #clear the config file
 sed -i 's/^soft=.*$/soft=/g' $stateFileName
 gitVersion=

@@ -1,0 +1,10 @@
+userPath="/home/testuser"
+jobTable=$userPath"/git"
+stateFileName=$userPath"/State"
+installPath=$userPath"/workspace"
+unzipPath=$installPath"/tmp/"
+logPath=$installPath"/skyF*/log"
+tmpPath=$userPath"/tmp/log/"$softName"_"$LOCALIP
+stateFileName=$userPath"/State"
+softName=`ls -t -1 /home/testuser/workspace/|grep skyF`
+localIP=`/sbin/ip -f inet addr | grep global | awk '{print $2}' | awk -F/ '{print $1}'`
