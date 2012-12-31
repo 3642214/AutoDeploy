@@ -1,11 +1,12 @@
 #!/bin/bash
 . conf_path
 [ -d $unzipPath ] || mkdir -p $unzipPath
+softName=`bash nameToPath.sh $1` || exit $?
 bash unzipFile.sh $1 || exit $?
 cd $unzipPath
+rm -fr ../$softName
 mv -f * ../
 rm -fr $unzipPath
-softName=`bash nameToPath.sh $1` || exit $?
 #copy default config file
 rm -fr $installPath/$softName/etc/*
 cp -r /root/git/$1/config/default/* $installPath/$softName/etc/
