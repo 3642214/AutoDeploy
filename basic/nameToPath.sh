@@ -1,5 +1,5 @@
 #!/bin/bash
-[ -n "$1" ] || { echo "nameToPath parameter error:no parameter";exit -1; }
+[ -n "$1" ] || { echo "nameToPath parameter error:no parameter";exit -5; }
 		case "$1" in
 			ZK|zk)echo zookeeper-3.*;;
 			CN|cn)echo skyFs-controller;;
@@ -7,5 +7,5 @@
 			CLT|clt)echo skyFS-mapreduce;;
 			KV)echo KV;;
 			shell)echo shell;;
-			*)echo "run parameter error";exit -1;;
+			*)echo "nameToPath parameter error";exit -6;;
 		esac		

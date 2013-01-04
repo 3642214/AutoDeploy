@@ -1,0 +1,17 @@
+git_pull no parameter -1
+git pull            -2
+analyzeJob parameter error:no parameter";exit -3
+StateFile error";exit -4
+nameToPath parameter error:no parameter";exit -5
+nameToPath parameter error";exit -6
+readConfig parameter error:no parameter";exit -7
+run parameter error: no parameter";exit -8
+run $softName error";exit -9
+unzip parameter error:no parameter";exit -10
+tar error";exit -11
+unzip error";exit -12
+update_config parameter error:no parameter";exit -13
+not found etc file";exit -14
+update_soft parameter error:no parameter";exit -15
+not found lib file";exit -16
+writeState parameter error:no parameter";exit -17

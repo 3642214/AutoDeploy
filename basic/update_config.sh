@@ -1,8 +1,8 @@
 #!/bin/bash
 . conf_path
-[ -n "$1" ] || { echo "update_config parameter error:no parameter";exit -1; }
+[ -n "$1" ] || { echo "update_config parameter error:no parameter";exit -13; }
 softName=`bash nameToPath.sh $1` || exit $?
-[ -d $installPath/$softName/etc ] || { echo "not found file";exit -1; }
+[ -d $installPath/$softName/etc ] || { echo "not found etc file";exit -14; }
 		rm -fr $installPath/$softName/etc/*
 		#copy default config file
 		cp git/$1/config/default/* $installPath/$softName/etc/
