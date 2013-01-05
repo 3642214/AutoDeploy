@@ -1,3 +1,4 @@
+Ö÷shell´íÎó 130~140
 git_pull no parameter -1
 git pull            -2
 analyzeJob parameter error:no parameter";exit -3
@@ -17,4 +18,5 @@ not found lib file";exit -16
 writeState parameter error:no parameter";exit -17
 cp ZK default config error";exit -18;
 cp default config error";exit -19
-clear_soft parameter error:no parameter";exit -20
+not found stateFile";exit -20
+readState error";exit -21
