@@ -1,6 +1,7 @@
 #!/bin/bash
 . conf_path
 devCount=`df -P | wc -l`
+VALUE=1
 devSize=
 volPath=
 usedPercent=
