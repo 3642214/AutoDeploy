@@ -6,9 +6,9 @@ PATH=$PATH:/root/git/shell/basic
 		cd $installPath/$softName/bin/
 		if [ $1 = "ZK" -o $1 = "zk" ]
 			then			
-				screen -S ZK -dm ./zkServer.sh start
+				./zkServer.sh start
 			else
 				screen -S $softName -dm ./$softName console
 				[ $? = "0" ] || { echo "run $softName error";exit -9; }
-				 	bash writeState.sh $softName || exit $?
+				 	bash writeState.sh $1 || exit $?
 		fi
