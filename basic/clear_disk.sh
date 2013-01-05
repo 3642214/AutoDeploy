@@ -13,7 +13,7 @@ do
 	#容量大于$SIZE,已用%大于$VALUE
 	if [ -n $devSize -a -n $usedPercent -a $devSize -gt $SIZE -a $usedPercent -gt $VALUE ]
 		then
-		volPath=`df|awk '{print $6}'|sed -n "${i}p"`
+		volPath=`df -P |awk '{print $6}'|sed -n "${i}p"`
 		[ ! $1 = "all" ] || rm -fr $volPath/rbw $volPath/rwr 
 		rm -fr $volPath/final/*
 		echo `date`" clean "$1" "$volPath >>/home/testuser/cleanDisk.log
