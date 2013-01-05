@@ -17,3 +17,4 @@ not found lib file";exit -16
 writeState parameter error:no parameter";exit -17
 cp ZK default config error";exit -18;
 cp default config error";exit -19
+clear_soft parameter error:no parameter";exit -20
