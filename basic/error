@@ -1,6 +1,6 @@
 Ö÷shell´íÎó 130~140
 git_pull no parameter										 			255
-git pull            													254
+git_pull error       													254
 analyzeJob parameter error:no parameter";exit 253
 StateFile error";exit 												252
 nameToPath parameter error:no parameter";exit 251
