@@ -18,7 +18,8 @@ if [ $1 = "zk" -o $1 = "ZK" ]
 		cp -r /root/git/shell/$1/config/default/* $installPath/$softName/etc/ || { echo "cp default config error";exit -19; }
 		#special config
 		find /root/git/shell/$1/config/special/* || exit 0
-		for shell in `find /root/git/shell/$1/config/special/*`
+	  shells=`find /root/git/shell/$1/config/special/*` || exit 0
+		for shell in 
 			{ 
 				bash $shell || exit $?
 			}
