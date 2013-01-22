@@ -31,5 +31,5 @@ appFile=/home/testuser/workspace/skyFs-storage/etc/app.config
 	#Escape Character: " to \"   / to \/
 	allVolPath="$(echo $allVolPath | sed 's/\//\\\//g' | sed 's/"/\\\"/g')"
 	allDevPath="$(echo $allDevPath | sed 's/\//\\\//g' | sed 's/"/\\\"/g')"
-	sed -i "s/{vol,.*}/{vol,[$allVolPath]}/g" $appconfigFile
-	sed -i "s/{devices,.*}/{devices,[$allDevPath]}/g" $appconfigFile
+	sed -i "s/{vol,.*}/{vol,[$allVolPath]}/g" $appFile
+	sed -i "s/{devices,.*}/{devices,[$allDevPath]}/g" $appFile

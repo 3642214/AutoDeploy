@@ -1,3 +1,11 @@
+create error:state file Already exists";exit  130
+update parameter error:no parameter";exit     131
+readState error";exit                         132
+paremeter was not soft or config"             133
+not found stateFile";exit                     134
+update parameter error:no parameter";exit     135
+clear parameter error:no parameter";exit      136
+clear paremeter error";exit                   137
 Ö÷shell´íÎó 130~140
 git_pull no parameter										 			255
 git_pull error       													254
