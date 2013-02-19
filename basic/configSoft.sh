@@ -19,7 +19,7 @@ if [ $1 = "zk" -o $1 = "ZK" ]
 		#special config
 		find /root/git/shell/$1/config/special/* || exit 0
 	  shells=`find /root/git/shell/$1/config/special/*` || exit 0
-		for shell in 
+		for shell in $shells 
 			{ 
 				bash $shell || exit $?
 			}
