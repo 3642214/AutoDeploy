@@ -8,3 +8,7 @@ unzipPath=$installPath"/tmp/"
 logPath=$installPath"/skyF*/log"
 stateFileName=$userPath"/State"
 localIP=`/sbin/ip -f inet addr | grep global | awk '{print $2}' | awk -F/ '{print $1}'`
+function log()
+{
+	echo " $0 -- $1"
+}

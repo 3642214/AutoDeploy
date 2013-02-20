@@ -1,9 +1,9 @@
 #!/bin/bash
 . conf_path
 PATH=$PATH:/root/git/shell/basic
-[ -n "$1" ] || { echo "update_soft parameter error:no parameter";exit -15; }
+[ -n "$1" ] || { log "update_soft parameter error:no parameter";exit 241; }
 softName=`bash nameToPath.sh $1` || exit $?
-[ -d $installPath/$softName/lib ] || { echo "not found lib file";exit -16; }
+[ -d $installPath/$softName/lib ] || { log "not found lib file";exit 240; }
 		[ -d $unzipPath ] || mkdir -p $unzipPath
 		bash unzipFile.sh $1 || exit $?
 		#delete old path

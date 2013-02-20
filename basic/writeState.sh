@@ -1,6 +1,6 @@
 #!/bin/bash
 . conf_path
-[ -n "$1" ] || { echo "writeState parameter error:no parameter";exit -17; }
+[ -n "$1" ] || { log "writeState parameter error:no parameter";exit 239; }
 [ -f $stateFileName ] || bash initState.sh 
 		sed -i 's/^soft=.*$/soft='$1'/g' $stateFileName
 		cd $gitPath/$1
