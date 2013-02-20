@@ -1,6 +1,6 @@
 userPath="/home/testuser"
 gitPath="/root/git"
-gitServerAddr="root@192.168.8.209:/root/git/final"
+gitServerAddr="root@192.168.8.209:/root/git_work/final"
 jobTable=$gitPath"/shell/KV"
 stateFileName=$userPath"/State"
 installPath=$userPath"/workspace"
