@@ -8,7 +8,7 @@ PATH=$PATH:/root/git/shell/basic
 			then			
 				./zkServer.sh start
 			else
-				screen -S $softName -dm ./$softName console
+				screen -S $1 -dm ./$softName console
 				[ $? = "0" ] || { log "run $softName error";exit 247; }
 				 	bash writeState.sh $1 || exit $?
 		fi

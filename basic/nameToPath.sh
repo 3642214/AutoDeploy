@@ -5,7 +5,7 @@
 			ZK|zk)echo zookeeper-3.*;;
 			CN|cn)echo skyFs-controller;;
 			SN|sn)echo skyFs-storage;;
-			CLT|clt)echo skyFS-mapreduce;;
+			CLT|clt|CLT_Master|CLT_Snode)echo skyFS-mapreduce;;
 			KV)echo KV;;
 			shell)echo shell;;
 			*)log "nameToPath parameter error";exit 250;;

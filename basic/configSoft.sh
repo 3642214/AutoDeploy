@@ -15,10 +15,11 @@ if [ $1 = "zk" -o $1 = "ZK" ]
 	else
 		#copy default config file
 		rm -fr $installPath/$softName/etc/*
-		cp -r /root/git/shell/$1/config/default/* $installPath/$softName/etc/ || { log "cp default config error";exit 237; }
+		folder=`echo $1 | sed 's/_/\//g'`
+		cp -r /root/git/shell/$folder/config/default/* $installPath/$softName/etc/ || { log "cp default config error";exit 237; }
 		#special config
-		find /root/git/shell/$1/config/special/* || exit 0
-	  shells=`find /root/git/shell/$1/config/special/*` || exit 0
+		find /root/git/shell/$folder/config/special/* || exit 0
+	  shells=`find /root/git/shell/$folder/config/special/*` || exit 0
 		for shell in $shells 
 			{ 
 				bash $shell || exit $?
