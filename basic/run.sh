@@ -1,5 +1,6 @@
 #!/bin/bash
 . conf_path
+. /etc/profile
 PATH=$PATH:/root/git/shell/basic
 [ $# = 1 ] || { log "run parameter error: no parameter";exit 248; } 
 		softName=`bash nameToPath.sh $1` || exit $?

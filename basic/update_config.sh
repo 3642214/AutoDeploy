@@ -3,6 +3,8 @@
 [ -n "$1" ] || { log "update_config parameter error:no parameter";exit 243; }
 softName=`bash nameToPath.sh $1` || exit $?
 [ -d $installPath/$softName/etc ] || { log "not found etc file";exit 242; }
+	#kill process
+	pkill -f $softName/erts.*/bin/beam.smp
 	if [ $1 = "zk" -o $1 = "ZK" ]
 	then
 		rm -fr $installPath/$softName/conf/*
