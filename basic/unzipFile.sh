@@ -1,6 +1,8 @@
 #!/bin/bash
 . conf_path
 [ -n "$1" ] || { log "unzip parameter error:no parameter";exit 246; }
+	#CLT_Master to CLT
+	folder=`echo $1 | sed 's/_/\//g'`
 	cd /root/git/$1/
 	if [ $1 = "zk" -o $1 = "ZK" ]
 		then

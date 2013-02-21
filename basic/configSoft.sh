@@ -15,6 +15,7 @@ if [ $1 = "zk" -o $1 = "ZK" ]
 	else
 		#copy default config file
 		rm -fr $installPath/$softName/etc/*
+		#CLT_Master to CLT
 		folder=`echo $1 | sed 's/_/\//g'`
 		cp -r /root/git/shell/$folder/config/default/* $installPath/$softName/etc/ || { log "cp default config error";exit 237; }
 		#special config
