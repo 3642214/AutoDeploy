@@ -6,6 +6,8 @@ softName=`bash nameToPath.sh $1` || exit $?
 [ -d $installPath/$softName/lib ] || { log "not found lib file";exit 240; }
 		[ -d $unzipPath ] || mkdir -p $unzipPath
 		bash unzipFile.sh $1 || exit $?
+		#kill process
+		pkill -f $softName/erts.*/bin/beam.smp
 		#delete old path
 		cd $installPath/$softName/
 		rm -fr lib releases erts-*
