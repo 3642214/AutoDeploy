@@ -12,7 +12,7 @@ softName=`bash nameToPath.sh $1` || exit $?
 		cd $installPath/$softName/
 		rm -fr lib releases erts-*
 		cd $unzipPath
-		mv -f skyFs-controller/lib $installPath/$softName/
-		mv -f skyFs-controller/releases $installPath/$softName/
-		mv -f skyFs-controller/erts-* $installPath/$softName/
+		mv -f $softName/lib $installPath/$softName/
+		mv -f $softName/releases $installPath/$softName/
+		mv -f $softName/erts-* $installPath/$softName/
 		rm -fr $unzipPath
