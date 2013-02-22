@@ -13,3 +13,4 @@ if [ $1 = "CN" ]
 	then
 		killall java
 		rm -fr $installPath/$softName/../zookeeper*
+fi
