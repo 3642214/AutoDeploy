@@ -1,10 +1,15 @@
 #!/bin/bash
 . conf_path
 PATH=$PATH:/root/git/shell/basic
-#kill process
-! pgrep beam.smp || killall beam.smp
-#delete file and Statefile
-	[ -f $stateFileName ] || { log "not found stateFile";exit 236; }
+[ -f $stateFileName ] || { log "not found stateFile";exit 236; }
 	job=`bash readState.sh soft` || { log "readState error";exit 235; }
 	softName=`bash nameToPath.sh $job` || exit $?
+[ -z $1 ]||[ $1 = $job ]||exit 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          	
+	#kill process
+	pkill -f $softName/erts.*/bin/beam.smp
+	#delete file and Statefile
 	rm -fr $installPath/$softName $stateFileName
+if [ $1 = "CN" ]
+	then
+		killall java
+		rm -fr $installPath/$softName/../zookeeper*
