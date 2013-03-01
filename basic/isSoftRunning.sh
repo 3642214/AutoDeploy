@@ -1,10 +1,10 @@
 #!/bin/bash
 . conf_path
-[ $# = 3 ] || { log "isSoftRunning parameter error";exit 232; }
+[ $# = 1 ] || { log "isSoftRunning parameter error";exit 232; }
 case "$1" in
 	CN){ target="ZK" ; port=2181; };;
-	SN){ target="CN" ; port=29009 };;
-	CLT_Snode){ target="CLT_Master" ; port=29001 };;
+	SN){ target="CN" ; port=29009; };;
+	CLT_Snode){ target="CLT_Master" ; port=29001; };;
 	CLT_Master) exit 0;;	
 	*)echo " $0 -- clear paremeter error";exit 137;;
 esac
