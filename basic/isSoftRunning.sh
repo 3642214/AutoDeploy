@@ -11,7 +11,7 @@ esac
 	ips=`bash whoDoJob.sh $target`
 for ip in $ips
 	{
-		(sleep 1;echo logout)|telnet $ip $port > temp.txt
+		(sleep 1;echo logout)|telnet $ip".perftest.sdfs" $port > temp.txt
 		cou=`grep -c Connected temp.txt`
 		if [ $cou -gt 0 ]
 			then
