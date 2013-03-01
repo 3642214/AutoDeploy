@@ -14,7 +14,7 @@ PATH=$PATH:/root/git/shell/basic
 			  while [ $result -ne 0 ]  #判断ZK、CN、Master是否在运行
 			  	do
 			  		(( i = i + 1 ))
-			  		[ $i -lt 30 ] || { log "$1 soft was not Runing";exit 231; }  #每秒判断一次，30次后报错
+			  		[ $i -lt $telnetTimeout ] || { log "$1 soft was not Runing";exit 231; }  #每秒判断一次
 			  		sleep 1
 					result=`bash isSoftRunning.sh $1`
 			  	done	
