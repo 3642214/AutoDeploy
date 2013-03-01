@@ -32,3 +32,7 @@ not found stateFile";exit 										236
 readState error";exit 												235
 create Git path error";exit                   234
 $key not found JOB" ;exit 										233
+isSoftRunning parameter error                 232
+soft was not Runing";exit                     231
+whoDoJob parameter error:no parameter";exit   230
+$job not found Who" ;exit                     229
