@@ -10,15 +10,14 @@ PATH=$PATH:/root/git/shell/basic
 				./zkServer.sh start
 			else
 			i=0
-			bash isSoftRunning.sh $1 
-			result=`echo $?`
+			result=`bash isSoftRunning.sh $1` 
 			  while [ $result -ne 0 ]  #判断ZK、CN、Master是否在运行
 			  	do
+					echo i=$i
 			  		(( i = i + 1 ))
 			  		[ $i -lt $telnetTimeout ] || { log "$1 soft was not Runing";exit 231; }  #每秒判断一次
 			  		sleep 1
-					bash isSoftRunning.sh $1
-					result=`echo $?`
+					result=`bash isSoftRunning.sh $1`
 			  	done	
 				screen -S $1 -dm ./$softName console
 				[ $? = "0" ] || { log "run $softName error";exit 247; }
