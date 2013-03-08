@@ -8,7 +8,7 @@ case "$1" in
 	CLT_Master) exit 0;;	
 	*)echo " $0 -- clear paremeter error";exit 137;;
 esac
-	ips=`bash whoDoJob.sh $target`
+	ips=`bash jobWhoDo.sh $target`
 for ip in $ips
 	{	
 		(sleep 1;echo logout)|telnet $ip".perftest.sdfs" $port > temp.txt || [ $? = 1 ] || { log "telnet error" ; rm -fr temp.txt ; exit 228; } 
