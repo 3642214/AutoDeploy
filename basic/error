@@ -37,3 +37,4 @@ soft was not Runing";exit                     231
 jobWhoDo parameter error:no parameter";exit   230
 $job not found Who" ;exit                     229
 telnet error";exit                            228
+restartSoft parameter error:no parameter";    227
