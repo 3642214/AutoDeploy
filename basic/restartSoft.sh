@@ -4,4 +4,4 @@
 softName=`bash nameToPath.sh $1` || exit $?
 	#kill process
 	pkill -f $softName/erts.*/bin/beam.smp
-bash run.sh $1
+bash run.sh $1 || exit $?

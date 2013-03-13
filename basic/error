@@ -8,6 +8,9 @@ clear parameter error:no parameter";exit      136
 clear paremeter error";exit                   137
 create shell path error";exit 	              138
 cmd parameter error:no parameter";exit        139
+restart parameter error:no parameter";exit    140
+restart-- paremeter error ,args:              141
+
 Ö÷shell´íÎó 130~140
 git_pull no parameter										 			255
 git_pull error       													254
