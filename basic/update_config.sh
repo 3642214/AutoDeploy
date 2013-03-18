@@ -12,10 +12,12 @@ softName=`bash nameToPath.sh $1` || exit $?
 	else
 		#copy default config file
 		rm -fr $installPath/$softName/etc/*
-		cp -r /root/git/shell/$1/config/default/* $installPath/$softName/etc/ || { log "cp default config error";exit 237; }
+		#CLT_Master to CLT/Master
+		folder=`echo $1 | sed 's/_/\//g'`
+		cp -r /root/git/shell/$folder/config/default/* $installPath/$softName/etc/ || { log "cp default config error";exit 237; }
 		#special config
-		find /root/git/shell/$1/config/special/* || exit 0
-		for shell in `find /root/git/shell/$1/config/special/*`
+		find /root/git/shell/$folder/config/special/* || exit 0
+		for shell in `find /root/git/shell/$folder/config/special/*`
 			{ 
 				bash $shell || exit $?
 			}
