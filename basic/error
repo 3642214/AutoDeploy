@@ -10,8 +10,13 @@ create shell path error";exit 	              138
 cmd parameter error:no parameter";exit        139
 restart parameter error:no parameter";exit    140
 restart-- paremeter error ,args:              141
-
 主shell错误 130~140
+
+not found releases folder" ; exit             190
+$vmFile can not Found";exit                   191
+$appFile can not Found";exit                  192
+特殊配置文件错误 190~200
+
 git_pull no parameter										 			255
 git_pull error       													254
 analyzeJob parameter error:no parameter";exit 253
