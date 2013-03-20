@@ -2,7 +2,7 @@
 . conf_path
 softName=`bash nameToPath.sh $1` || exit $?
 [ -d $installPath/$softName/releases ] || { log "not found releases file";exit 242; }
-versionFloder=`ls -l $CNPath/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
+versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
 if [ $1 = "zk" -o $1 = "ZK" ]
 then
 	rm -fr $installPath/$softName/conf/*
