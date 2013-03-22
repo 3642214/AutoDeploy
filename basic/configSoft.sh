@@ -8,4 +8,9 @@ rm -fr ../$softName
 mv -f * ../
 cd ../
 rm -fr $unzipPath
-bash setConfig.sh $1 || exit $?
+if [ $1 = "CLT_Master" -o $1 = "CLT_Snode" ]
+	then
+		bash etcSetConfig.sh $1 || exit $?
+	else
+	  bash setConfig.sh $1 || exit $?
+fi

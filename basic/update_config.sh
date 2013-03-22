@@ -5,4 +5,9 @@ softName=`bash nameToPath.sh $1` || exit $?
 #kill process
 pkill -f $softName/erts.*/bin/beam.smp
 #config
-bash setConfig.sh $1 || exit $?
+if [ $1 = "CLT_Master" -o $1 = "CLT_Snode" ]
+	then
+		bash etcSetConfig.sh $1 || exit $?
+	else
+	  bash setConfig.sh $1 || exit $?
+fi
