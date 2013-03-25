@@ -1,13 +1,13 @@
 #!/bin/bash
 . conf_path
 softName=`bash nameToPath.sh $1` || exit $?
-[ -d $installPath/$softName/releases ] || { log "not found releases file";exit 242; }
-versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
 if [ $1 = "zk" -o $1 = "ZK" ]
 then
 	rm -fr $installPath/$softName/conf/*
 	cp -r /root/git/shell/$1/config/default/* $installPath/$softName/conf/ || { log "cp ZK default config error";exit 238; }
 else
+	[ -d $installPath/$softName/releases ] || { log "not found releases file";exit 242; }
+	versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
 	#delete old config file
 	rm -fr $installPath/$softName/releases/$versionFloder/sys.config
 	rm -fr $installPath/$softName/releases/$versionFloder/vm.args
