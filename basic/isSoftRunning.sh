@@ -8,7 +8,8 @@ case "$1" in
 	CLT_Master){ echo 0 ; exit 0; };;	
 	*)echo " $0 -- clear paremeter error";exit 137;;
 esac
-	ips=`bash jobWhoDo.sh $target`
+	ips=`bash jobWhoDo.sh $target` || exit $?
+	[ -n $ips ] || { echo 1; exit 0; }
 for ip in $ips
 	{	
 		(sleep 1;echo logout)|telnet $ip".perftest.sdfs" $port > temp.txt || [ $? = 1 ] || { log "telnet error" ; rm -fr temp.txt ; exit 228; } 
