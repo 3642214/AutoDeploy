@@ -21,5 +21,5 @@ softName=`bash nameToPath.sh $1` || exit $?
 			rm -fr $unzipPath
 		cd $installPath/$softName/
 			versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
-			mv -f sys.config $installPath/$softName/$versionFloder/
-			mv -f vm.args $installPath/$softName/$versionFloder/
+			mv -f sys.config $installPath/$softName/releases/$versionFloder/
+			mv -f vm.args $installPath/$softName/releases/$versionFloder
