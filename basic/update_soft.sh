@@ -10,9 +10,16 @@ softName=`bash nameToPath.sh $1` || exit $?
 		pkill -f $softName/erts.*/bin/beam.smp
 		#delete old path
 		cd $installPath/$softName/
-		rm -fr lib releases erts-*
+			versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
+			mv -f releases/$versionFloder/sys.config ./
+			mv -f releases/$versionFloder/vm.args ./
+			rm -fr lib releases erts-*
 		cd $unzipPath
-		mv -f $softName/lib $installPath/$softName/
-		mv -f $softName/releases $installPath/$softName/
-		mv -f $softName/erts-* $installPath/$softName/
-		rm -fr $unzipPath
+			mv -f $softName/lib $installPath/$softName/
+			mv -f $softName/releases $installPath/$softName/
+			mv -f $softName/erts-* $installPath/$softName/
+			rm -fr $unzipPath
+		cd $installPath/$softName/
+			versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
+			mv -f sys.config $installPath/$softName/$versionFloder/
+			mv -f vm.args $installPath/$softName/$versionFloder/
