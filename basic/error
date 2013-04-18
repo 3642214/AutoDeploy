@@ -15,6 +15,7 @@ restart-- paremeter error ,args:              141
 not found releases folder" ; exit             190
 $vmFile can not Found";exit                   191
 $appFile can not Found";exit                  192
+echo "not found KVFile" ; exit                193 
 ÌØÊâÅäÖÃÎÄ¼ş´íÎó 190~200
 
 git_pull no parameter										 			255
