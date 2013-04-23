@@ -1,7 +1,7 @@
 #!/bin/bash
 . conf_path
 devCount=`df -P | wc -l`
-VALUE=1
+VALUE=0
 devSize=
 volPath=
 usedPercent=
@@ -15,7 +15,7 @@ do
 		then
 		volPath=`df -P |awk '{print $6}'|sed -n "${i}p"`
 		#if $1 = 'all' ; delete rbw/rwr path ; else delete final
-		[ -z $1 ] || [ ! $1 = "all" ] || rm -fr $volPath/rbw $volPath/rwr 
+		[ -z $1 ] || [ ! $1 = "all" ] || rm -fr $volPath/rbw $volPath/rwr $volPath/tmp $volPath/lost+found
 		rm -fr $volPath/final/*
 		echo `date`" clean "$1" "$volPath >>/home/testuser/cleanDisk.log
 	fi
