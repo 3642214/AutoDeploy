@@ -21,8 +21,8 @@ softName=`bash nameToPath.sh $1` || exit $?
 					mv -f $softName/erts-* $installPath/$softName/
 					rm -fr $unzipPath
 				cd $installPath/$softName/
-					mv -f sys.config $installPath/$softName/etc/
-					mv -f vm.args $installPath/etc/
+					mv -f app.config $installPath/$softName/etc/
+					mv -f vm.args $installPath/$softName/etc/
 			else	
 				cd $installPath/$softName/
 					versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
