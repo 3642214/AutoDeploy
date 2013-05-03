@@ -1,7 +1,7 @@
 ## Name of the node
--name RTSP-server@192.168.8.213
+-name RTSP-S@192.168.8.213
 ## Cookie for distributed erlang
--setcookie RTSP-server
+-setcookie RTSP
 ## Heartbeat management; auto-restarts VM if it dies or becomes unresponsive
 ## (Disabled by default..use with caution!)
 ##-heart
