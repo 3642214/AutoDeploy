@@ -9,17 +9,33 @@ softName=`bash nameToPath.sh $1` || exit $?
 		#kill process
 		pkill -f $softName/erts.*/bin/beam.smp
 		#delete old path
-		cd $installPath/$softName/
-			versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
-			mv -f releases/$versionFloder/sys.config ./
-			mv -f releases/$versionFloder/vm.args ./
-			rm -fr lib releases erts-*
-		cd $unzipPath
-			mv -f $softName/lib $installPath/$softName/
-			mv -f $softName/releases $installPath/$softName/
-			mv -f $softName/erts-* $installPath/$softName/
-			rm -fr $unzipPath
-		cd $installPath/$softName/
-			versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
-			mv -f sys.config $installPath/$softName/releases/$versionFloder/
-			mv -f vm.args $installPath/$softName/releases/$versionFloder
+		if [ $1 = "CLT_Snode" -o $1 = "CLT_Master" ]
+			then
+				cd $installPath/$softName/
+					mv -f etc/app.config ./
+					mv -f etc/vm.args ./
+					rm -fr lib releases erts-*
+				cd $unzipPath
+					mv -f $softName/lib $installPath/$softName/
+					mv -f $softName/releases $installPath/$softName/
+					mv -f $softName/erts-* $installPath/$softName/
+					rm -fr $unzipPath
+				cd $installPath/$softName/
+					mv -f sys.config $installPath/$softName/etc/
+					mv -f vm.args $installPath/etc/
+			else	
+				cd $installPath/$softName/
+					versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
+					mv -f releases/$versionFloder/sys.config ./
+					mv -f releases/$versionFloder/vm.args ./
+					rm -fr lib releases erts-*
+				cd $unzipPath
+					mv -f $softName/lib $installPath/$softName/
+					mv -f $softName/releases $installPath/$softName/
+					mv -f $softName/erts-* $installPath/$softName/
+					rm -fr $unzipPath
+				cd $installPath/$softName/
+					versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
+					mv -f sys.config $installPath/$softName/releases/$versionFloder/
+					mv -f vm.args $installPath/$softName/releases/$versionFloder
+		fi
