@@ -6,7 +6,7 @@ case "$1" in
 	CN){ target="ZK" ; port=2181; };;
 	SN){ target="CN" ; port=29009; };;
 	CLT_Snode){ target="CLT_Master" ; port=30001; };;
-	CLT_Master){ echo 0 ; exit 0; };;	
+	CLT_Master|RTSP){ echo 0 ; exit 0; };;	
 	*)echo " $0 -- clear paremeter error";exit 137;;
 esac
 	ips=`bash jobWhoDo.sh $target` || exit $?
