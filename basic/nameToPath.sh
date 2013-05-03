@@ -6,7 +6,7 @@ PATH=$PATH:/root/git/shell/basic
 			ZK|zk)echo zookeeper-3.*;;
 			CN|cn)echo skyFs-controller;;
 			SN|sn)echo skyFs-storage;;
-			RTSP|rtsp)echo RTSP;;
+			RTSP|rtsp)echo RTSP-server;;
 			CLT|clt|CLT_Master|CLT_Snode)echo skyFS-mapreduce;;
 			KV)echo KV;;
 			shell)echo shell;;
