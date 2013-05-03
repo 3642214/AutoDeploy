@@ -1,4 +1,5 @@
 #!/bin/bash
+PATH=$PATH:/root/git/shell/basic
 . conf_path
 [ -d $unzipPath ] || mkdir -p $unzipPath
 softName=`bash nameToPath.sh $1` || exit $?

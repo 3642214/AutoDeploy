@@ -1,6 +1,6 @@
 #!/bin/bash
-. conf_path
 PATH=$PATH:/root/git/shell/basic
+. conf_path
 [ -n "$1" ] || { log "update_soft parameter error:no parameter";exit 241; }
 softName=`bash nameToPath.sh $1` || exit $?
 [ -d $installPath/$softName/lib ] || { log "not found lib file";exit 240; }

@@ -1,4 +1,5 @@
 #!/bin/bash
+PATH=$PATH:/root/git/shell/basic
 . conf_path
 [ -n "$1" ] || { log "writeState parameter error:no parameter";exit 239; }
 [ -f $stateFileName ] || bash initState.sh 

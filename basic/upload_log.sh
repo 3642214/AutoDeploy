@@ -1,4 +1,5 @@
 #!/bin/bash
+PATH=$PATH:/root/git/shell/basic
 . conf_path
 softName=`ls -t -1 /home/testuser/workspace/|grep skyF`
 tmpPath=$userPath"/tmp/log/"$softName"_"$localIP

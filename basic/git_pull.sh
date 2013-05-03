@@ -1,4 +1,5 @@
 #!/bin/bash
+PATH=$PATH:/root/git/shell/basic
 . conf_path
 function initGitPath()
 {

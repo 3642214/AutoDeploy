@@ -1,4 +1,5 @@
 #!/bin/bash
+PATH=$PATH:/root/git/shell/basic
 . conf_path
 softName=`bash nameToPath.sh $1` || exit $?
 [ -d $installPath/$softName/etc ] || { log "not found releases file";exit 242; }

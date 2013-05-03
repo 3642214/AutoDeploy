@@ -1,6 +1,6 @@
 #!/bin/bash
-. conf_path
 PATH=$PATH:/root/git/shell/basic
+. conf_path
 [ -f $stateFileName ] || { log "not found stateFile";exit 236; }
 	job=`bash readState.sh soft` || { log "readState error";exit 235; }
 	softName=`bash nameToPath.sh $job` || exit $?

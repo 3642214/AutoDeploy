@@ -1,4 +1,5 @@
 #!/bin/bash
+PATH=$PATH:/root/git/shell/basic
 . conf_path
 softName=`bash nameToPath.sh $1` || exit $?
 if [ $1 = "zk" -o $1 = "ZK" ]

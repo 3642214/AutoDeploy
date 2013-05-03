@@ -1,4 +1,5 @@
 #!/bin/bash
+PATH=$PATH:/root/git/shell/basic
 . conf_path
 [ $# = 1 ] || { log "isSoftRunning parameter error";exit 232; }
 case "$1" in

@@ -1,4 +1,5 @@
 #!/bin/bash
+PATH=$PATH:/root/git/shell/basic
 . conf_path
 [ -n "$1" ] || { log "unzip parameter error:no parameter";exit 246; }
 	#CLT_Master to CLT

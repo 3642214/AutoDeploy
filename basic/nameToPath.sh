@@ -1,4 +1,5 @@
 #!/bin/bash
+PATH=$PATH:/root/git/shell/basic
 . conf_path
 [ -n "$1" ] || { log "nameToPath parameter error:no parameter";exit 251; }
 		case "$1" in
