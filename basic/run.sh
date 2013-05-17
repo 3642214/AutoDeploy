@@ -2,6 +2,7 @@
 PATH=$PATH:/root/git/shell/basic
 . conf_path
 . /etc/profile
+ulimit -n 65535
 PATH=$PATH:/root/git/shell/basic
 [ $# = 1 ] || { log "run parameter error: no parameter";exit 248; } 
 		softName=`bash nameToPath.sh $1` || exit $?
