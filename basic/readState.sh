@@ -2,5 +2,8 @@
 PATH=$PATH:/root/git/shell/basic
 . conf_path
 [ -n "$1" ] || { log "readConfig parameter error:no parameter";exit 249; }
-	value=`grep "^$1=" $stateFileName` || exit $?
-		 echo $value | cut -d"=" -f 2 
+if [ "$1" = "soft" ]
+then
+	value=`grep -o "\[.*\]" State |sed 's/\[//g'|sed 's/\]//g'` || exit $?	 
+fi
+echo $value
