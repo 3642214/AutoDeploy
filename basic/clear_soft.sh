@@ -14,6 +14,6 @@ for job in $jobs
 		if [ $job = "ZK" ]
 			then
 				killall java
-				rm -fr $installPath/$softName/../zookeeper*
+				rm -fr $installPath/zookeeper*
 		fi
 	}

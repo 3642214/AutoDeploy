@@ -9,4 +9,4 @@ PATH=$PATH:/root/git/shell/basic
 		gitVersion=`git log|grep commit|sed -n 1p|cut -d" " -f 2`
 		bash ini.sh $1 git $gitVersion
 		date=`date`
-		bash ini.sh $1 date $date
+		bash ini.sh $1 date "$date"
