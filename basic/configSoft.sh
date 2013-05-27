@@ -1,6 +1,7 @@
 #!/bin/bash
 PATH=$PATH:/root/git/shell/basic
 . conf_path
+bash initWorkspace.sh || exit $?
 [ -d $unzipPath ] || mkdir -p $unzipPath
 softName=`bash nameToPath.sh $1` || exit $?
 bash unzipFile.sh $1 || exit $?
