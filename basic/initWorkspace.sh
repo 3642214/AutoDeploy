@@ -16,6 +16,6 @@ function init()
 	  fi
 	done
 	mkdir -p $volPath/workspace
-	ls -s $volPath/workspace $installPath
+	ln -s $volPath/workspace $installPath
 }
 [ -L $installPath ] || init || { log "mkdir workspace error";exit 225; }
