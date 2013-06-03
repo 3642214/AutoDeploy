@@ -6,5 +6,5 @@ tmpPath=$userPath"/tmp/log/"$softName"_"$localIP
 rm -fr /home/testuser/tmp
 /bin/mkdir -p $tmpPath
 /bin/cp -r $logPath/*.log* $tmpPath/ || exit $? 
- 	/usr/bin/scp -r $tmpPath root@192.168.8.209:/mnt/sda/log/ || exit $? 
+ 	/usr/bin/scp -r $tmpPath root@192.168.8.213:/mnt/sda/log/ || exit $? 
   	rm -fr /home/testuser/tmp
