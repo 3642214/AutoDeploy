@@ -12,8 +12,8 @@ PATH=$PATH:/root/git/shell/basic
 				./zkServer.sh start
 			else
 			i=0
-			result=`bash isSoftRunning.sh $1` || exit $?
-			  while [ $result -ne 0 ]  #判断ZK、CN、Master是否在运行
+			result=0 || [ -n $2 ] || result=`bash isSoftRunning.sh $1` || exit $? #$2参数用于第二次启动程序，无需判断CN、Master是否开启。
+			  while [ "$result" -ne 0 ]  #判断ZK、CN、Master是否在运行
 			  	do
 					echo i=$i
 			  		(( i = i + 1 ))
