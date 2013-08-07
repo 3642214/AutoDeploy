@@ -23,20 +23,20 @@ softName=`bash nameToPath.sh $1` || exit $?
 				cd $installPath/$softName/
 					mv -f app.config $installPath/$softName/etc/
 					mv -f vm.args $installPath/$softName/etc/
-			else if [ $1 != ZK ]
-				then
-					cd $installPath/$softName/
-						versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
-						mv -f releases/$versionFloder/sys.config ./
-						mv -f releases/$versionFloder/vm.args ./
-						rm -fr lib releases erts-*
-					cd $unzipPath
-						mv -f $softName/lib $installPath/$softName/
-						mv -f $softName/releases $installPath/$softName/
-						mv -f $softName/erts-* $installPath/$softName/
-						rm -fr $unzipPath
-					cd $installPath/$softName/
-						versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
-						mv -f sys.config $installPath/$softName/releases/$versionFloder/
-						mv -f vm.args $installPath/$softName/releases/$versionFloder
+		elif [ $1 != ZK ]
+			then
+				cd $installPath/$softName/
+					versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
+					mv -f releases/$versionFloder/sys.config ./
+					mv -f releases/$versionFloder/vm.args ./
+					rm -fr lib releases erts-*
+				cd $unzipPath
+					mv -f $softName/lib $installPath/$softName/
+					mv -f $softName/releases $installPath/$softName/
+					mv -f $softName/erts-* $installPath/$softName/
+					rm -fr $unzipPath
+				cd $installPath/$softName/
+					versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
+					mv -f sys.config $installPath/$softName/releases/$versionFloder/
+					mv -f vm.args $installPath/$softName/releases/$versionFloder
 		fi
