@@ -23,8 +23,7 @@ softName=`bash nameToPath.sh $1` || exit $?
 				cd $installPath/$softName/
 					mv -f app.config $installPath/$softName/etc/
 					mv -f vm.args $installPath/$softName/etc/
-		elif [ $1 != ZK ]
-			then
+			else	
 				cd $installPath/$softName/
 					versionFloder=`ls -l $installPath/$softName/releases | grep ^d | awk '{print $9}' | sort -nr | sed -n 1p`
 					mv -f releases/$versionFloder/sys.config ./
