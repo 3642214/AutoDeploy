@@ -10,7 +10,8 @@ for job in $jobs
 			#kill process
 			pkill -f $softName/erts.*/bin/beam.smp
 			#delete file and Statefile
-			rm -fr $installPath/$softName $stateFileName
+			rm -fr $installPath/$softName
+			bash delState.sh $job || exit $?
 		if [ $job = "ZK" ]
 			then
 				killall java
