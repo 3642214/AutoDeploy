@@ -1,7 +1,7 @@
 #/bin/bash
 PATH=$PATH:/root/git/shell/basic
 . conf_path
-hopeJobs=`bash analyzeJob.sh $1`
+hopeJobs=`bash analyzeJob.sh $hname`
 nowJobs=`bash readState.sh soft`
 [ -n "$hopeJobs" ] || [ -n "$nowJobs" ] || { echo 1;exit;}
 i=0
