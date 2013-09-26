@@ -1,4 +1,5 @@
 telnetTimeout=20
+hname=`hostname |cut -d'.' -f 1`
 userPath="/home/testuser"
 gitPath="/root/git"
 gitServerAddr="root@192.168.8.213:/root/git_work/final"

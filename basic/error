@@ -49,3 +49,4 @@ telnet error";exit                            228
 restartSoft parameter error:no parameter";    227
 initStateValue parameter error:no parameter   226
 mkdir workspace error";                       225
+delConfig parameter error:no parameter";exit  224
