@@ -14,10 +14,9 @@ do
     done
   if [ $k = 0 ]
     then
-       cd /root/tools/disk && ./disk2 $devPath
        if [ $? = 0 ]
          then
-           /sbin/fdisk /dev/$devPath"1" << EOF
+           /sbin/fdisk /dev/$devPath << EOF
 d
 n
 p
@@ -26,6 +25,7 @@ p
 
 w
 EOF
+    mkfs.ext4 /dev/$devPath"1"
            if [ $? = 0 ]
            then
              mkdir -p /mnt/$devPath
