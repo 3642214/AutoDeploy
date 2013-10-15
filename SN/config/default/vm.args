@@ -1,7 +1,7 @@
 ## Name of the node
 -name skyFs-storage@192.168.3.11
 ## Cookie for distributed erlang
--setcookie 012345
+-setcookie 12345
 ## Heartbeat management; auto-restarts VM if it dies or becomes unresponsive
 ## Disabled by default..use with caution
 ##-heart
