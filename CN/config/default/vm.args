@@ -12,6 +12,6 @@
 +P 100000
 ## Increase number of concurrent ports/sockets
 -env ERL_MAX_PORTS 40960
--env ERL_MAX_ETS_TABLES 10000
+-env ERL_MAX_ETS_TABLES 100000
 ## Tweak GC to run more often
 -env ERL_FULLSWEEP_AFTER 0
