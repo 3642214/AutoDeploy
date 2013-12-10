@@ -21,5 +21,5 @@ appFile=$SNPath/releases/$floder/sys.config
 	 			allDiskSize=$(( allDiskSize + 20 ))
 	 	fi	 			
 	done
-	rate=$(( 100 / allDiskSize ))
+	rate=$(( 320 / allDiskSize ))
 	sed -i "s/{write_rate,.*},/{write_rate,$rate},/g" $appFile
