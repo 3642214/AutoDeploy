@@ -10,7 +10,7 @@ rm -fr ../$softName
 mv -f * ../
 cd ../
 rm -fr $unzipPath
-if [ $1 = "CLT_Master" -o $1 = "CLT_Snode" -o $1 = "RTSP" ]
+if [ $1 = "CLT_Master" -o $1 = "CLT_Snode" -o $1 = "RTSP" -o $1 = "ZAB"]
 	then
 		bash etcSetConfig.sh $1 || exit $?
 	else

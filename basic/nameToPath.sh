@@ -11,5 +11,6 @@ PATH=$PATH:/root/git/shell/basic
 			SMTSDVR|smtsdvr)echo smts_dvr;;
 			KV)echo KV;;
 			shell)echo shell;;
+			zab|ZAB)echo skyFS-zab0;;
 			*)log "nameToPath parameter error";exit 250;;
 		esac		
