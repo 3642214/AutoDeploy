@@ -1,5 +1,5 @@
 ## Name of the node
--name smts_dvr@127.0.0.1
+-name SMTS-D@127.0.0.1
 
 ## Cookie for distributed erlang
 -setcookie 12345
